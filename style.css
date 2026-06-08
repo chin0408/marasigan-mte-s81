@@ -393,9 +393,16 @@ h2,
 ================================================== */
 
 footer .bi {
-    color: #00d4ff;
+    background: linear-gradient(
+        45deg,
+        #00d4ff,
+        #ff00ff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
     font-size: 1.2rem;
-    transition: all 0.3s ease;
 }
 
 footer .bi:hover {
@@ -408,15 +415,42 @@ footer .bi:hover {
         0 0 20px #ff00ff;
 }
 
+/* =================================================
+    CONTACT
+================================================= */
+
+#contact .form-control {
+    background: #1b1b1b;
+    border: 1px solid #00d4ff;
+    color: white;
+}
+
+#contact .form-control:focus {
+    border-color: #ff00ff;
+    box-shadow: 0 0 10px #ff00ff;
+    background: #1b1b1b;
+    color: white;
+}
+
+#contact label {
+    color: white;
+}
+
 /* ==================================================
    FOOTER
 ================================================== */
 
 footer {
-    border-top: 2px solid #00d4ff;
+    border-top: 2px solid transparent;
+
+    border-image: linear-gradient(
+        90deg,
+        #00d4ff,
+        #ff00ff
+    ) 1;
 
     box-shadow:
-        0 -2px 15px rgba(0, 212, 255, 0.2);
+        0 -2px 15px rgba(255, 0, 255, 0.25);
 }
 
 footer a {
@@ -430,6 +464,11 @@ footer a:hover {
 
     text-shadow:
         0 0 10px #ff00ff;
+}
+
+footer hr {
+    border-color: #ff00ff;
+    box-shadow: 0 0 10px #ff00ff;
 }
 
 /* MOBILE OPTIMIZATION */
