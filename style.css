@@ -1,7 +1,30 @@
+/* ==================================================
+   GLOBAL STYLES
+================================================== */
+
 body {
-    background-color: #0a0a0a;
-    color: white;
     font-family: 'Poppins', sans-serif;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255, 0, 255, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(0, 212, 255, 0.08),
+            transparent 30%
+        ),
+        #0a0a0a;
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 100px 0;
 }
 
 h1,
@@ -10,9 +33,141 @@ h2,
     font-family: 'Orbitron', sans-serif;
 }
 
-section {
-    padding: 100px 0;
+.section-title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 4rem;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    background: linear-gradient(
+        90deg,
+        #00d4ff,
+        #7a7dff,
+        #ff00ff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+       0 0 5px rgba(0,212,255,.5),
+       0 0 15px rgba(0,212,255,.3),
+       0 0 25px rgba(255,0,255,.2);
 }
+
+.section-title::after {
+    content: "";
+    display: block;
+
+    width: 140px;
+    height: 3px;
+
+    margin: 15px auto 0;
+
+    background: linear-gradient(
+        90deg,
+        #00d4ff,
+        #ff00ff
+    );
+
+    border-radius: 50px;
+
+    box-shadow:
+        0 0 10px #00d4ff,
+        0 0 20px #ff00ff;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-title::after {
+        width: 100px;
+    }
+}
+
+/* ==================================================
+   NAVBAR
+================================================== */
+
+.navbar {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    background: linear-gradient(
+        90deg,
+        #00d4ff,
+        #ff00ff
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 10px rgba(0, 212, 255, 0.5),
+        0 0 20px rgba(255, 0, 255, 0.3);
+}
+
+.nav-link {
+    color: rgba(255,255,255,0.85);
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ff00ff !important;
+    text-shadow:
+        0 0 10px #ff00ff,
+        0 0 20px #ff00ff;
+}
+
+.nav-link.active {
+    color: #ff00ff !important;
+
+    text-shadow:
+        0 0 10px #ff00ff,
+        0 0 20px #ff00ff;
+}
+
+.bi {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bi:hover {
+    color: #ff00ff;
+
+    text-shadow:
+        0 0 10px #ff00ff,
+        0 0 20px #ff00ff;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        #00d4ff,
+        #ff00ff
+    );
+    border-radius: 10px;
+}
+
+/* ==================================================
+   HERO SECTION
+================================================== */
 
 #hero {
     min-height: 100vh;
@@ -23,37 +178,265 @@ section {
     );
 }
 
-.navbar-brand {
-    color: #00e5ff !important;
+.hero-text {
+    animation: slideLeft 1.2s ease;
 }
 
-.btn-info {
-    background-color: #00e5ff;
+.hero-image {
+    animation: fadeInUp 1.2s ease;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 650px;
+    border-radius: 15px;
+    will-change: transform;
+
+    box-shadow:
+        0 0 20px rgba(0, 212, 255, 0.5),
+        0 0 40px rgba(255, 0, 255, 0.3);
+
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+
+/* ==================================================
+   HERO BUTTONS
+================================================== */
+
+.btn-primary {
+    background: linear-gradient(
+        45deg,
+        #00d4ff,
+        #9d00ff
+    );
+
     border: none;
+    color: white;
+    font-weight: 600;
+
+    box-shadow:
+        0 0 15px rgba(0, 212, 255, 0.5);
+
+    transition: all 0.3s ease;
 }
 
-.btn-info:hover {
-    background-color: #00c4db;
+.btn-primary:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 20px #00d4ff,
+        0 0 40px #9d00ff;
 }
 
-.nav-link:hover {
-    color: #00e5ff !important;
+.btn-outline-light {
+    border: 1px solid #ff00ff;
+    color: #ff00ff;
+
+    transition: all 0.3s ease;
 }
 
-.bi {
-    cursor: pointer;
+.btn-outline-light:hover {
+    background: #ff00ff;
+    color: white;
+
+    box-shadow:
+        0 0 15px #ff00ff;
 }
+
+
+/* ==================================================
+   HERO ANIMATIONS
+================================================== */
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* ==================================================
+   PRODUCT CARDS
+================================================== */
 
 .card {
-    border: 1px solid #00e5ff;
-    transition: 0.3s;
+    background: #1b1b1b;
+    border: 1px solid #00d4ff;
+    overflow: hidden;
+
+    will-change: transform;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px #00e5ff;
+    transform: translateY(-10px) scale(1.02);
+    border-color: #ff00ff;
+    animation: glowCard 2s infinite alternate;
 }
 
+.card img {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card-title {
+    color: white;
+    font-weight: 600;
+}
+
+@keyframes glowCard {
+    from {
+        box-shadow:
+            0 0 15px #00d4ff,
+            0 0 30px #00d4ff;
+    }
+
+    to {
+        box-shadow:
+            0 0 20px #ff00ff,
+            0 0 40px #ff00ff;
+    }
+}
+
+/* ==================================================
+   PRODUCT BUTTONS
+================================================== */
+
+.card .btn-info {
+    background: linear-gradient(
+        45deg,
+        #00d4ff,
+        #ff00ff
+    );
+
+    border: none;
+    color: white;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.card .btn-info:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 15px #00d4ff,
+        0 0 25px #ff00ff;
+}
+
+/* ==================================================
+   FEATURES SECTION
+================================================== */
+
+#features .bi {
+    font-size: 3rem;
+
+    background: linear-gradient(
+        45deg,
+        #00d4ff,
+        #ff00ff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    transition: all 0.3s ease;
+}
+
+#features .bi:hover {
+    transform: scale(1.1);
+}
+
+#features .col-md-4 {
+    transition: transform 0.3s ease;
+}
+
+#features .col-md-4:hover {
+    transform: translateY(-8px);
+}
+
+/* ==================================================
+   SOCIAL ICONS
+================================================== */
+
+footer .bi {
+    color: #00d4ff;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+footer .bi:hover {
+    color: #ff00ff;
+
+    transform: translateY(-2px);
+
+    text-shadow:
+        0 0 10px #ff00ff,
+        0 0 20px #ff00ff;
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+
 footer {
-    border-top: 1px solid #00e5ff;
+    border-top: 2px solid #00d4ff;
+
+    box-shadow:
+        0 -2px 15px rgba(0, 212, 255, 0.2);
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff00ff;
+
+    text-shadow:
+        0 0 10px #ff00ff;
 }
