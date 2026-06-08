@@ -433,22 +433,29 @@ footer a:hover {
 }
 
 /* MOBILE OPTIMIZATION */
-@media (max-width: 768px) {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+@media (max-width: 991px) {
 
-    section {
-        padding: 60px 0;
-    }
-
-    #hero {
-        min-height: auto;
-        padding-top: 30px;
+    .hero-text {
+        margin-bottom: 2rem;
     }
 
     .hero-image {
         margin-top: 3rem;
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: 90%;
+        max-width: 500px;
+    }
+
+    #hero {
+        min-height: auto;
+        padding-top: 80px;
+        padding-bottom: 80px;
     }
 
     .section-title {
         font-size: 2rem;
     }
-}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
