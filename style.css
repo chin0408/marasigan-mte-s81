@@ -43,3 +43,17 @@ section {
 .bi {
     cursor: pointer;
 }
+
+.card {
+    border: 1px solid #00e5ff;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #00e5ff;
+}
+
+footer {
+    border-top: 1px solid #00e5ff;
+}
